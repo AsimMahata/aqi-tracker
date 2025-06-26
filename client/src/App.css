@@ -1,0 +1,61 @@
+:root {
+  --primary-color: #2563eb;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --bg-hover: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --loading-bg: radial-gradient(circle at center, #e0f2ff, #ffffff);
+}
+
+[data-theme="dark"] {
+  --primary-color: #60a5fa;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-hover: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+  --section-bg: #1e293b;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --loading-bg: radial-gradient(circle at center, #001f3f, #000814);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  position: relative;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}

@@ -1,0 +1,274 @@
+.rankings-container {
+  width: 100%;
+  padding: 2rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.rankings-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  background-color: var(--section-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rankings-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.rankings-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.rankings-table-container {
+  background: var(--section-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 3rem;
+  border: 1px solid var(--card-border);
+}
+
+.rankings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.rankings-table th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  border-bottom: 2px solid var(--border-color);
+  text-align: center;
+}
+
+.rankings-table th:hover {
+  background: var(--bg-hover);
+  text-align: center;
+}
+
+.rankings-table td {
+  padding: 1rem;
+  font-weight: 550;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+
+.rankings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rankings-table tr:hover {
+  background: var(--bg-hover);
+}
+
+.aqi-good {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.aqi-moderate {
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.15);
+}
+
+.aqi-unhealthy-sensitive {
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.15);
+}
+
+.aqi-unhealthy {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+}
+
+.aqi-very-unhealthy {
+  color: #e879f9;
+  background: rgba(232, 121, 249, 0.15);
+}
+
+.aqi-hazardous {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.15);
+}
+
+.aqi-na {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+.list-aqi-value{
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 20px;
+  min-width: 50%;
+}
+
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.rankings-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.summary-card {
+  background: var(--section-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--card-border);
+  text-align: center;
+}
+
+.summary-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.summary-card ol {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.summary-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.summary-card li:last-child {
+  border-bottom: none;
+}
+
+.city-name {
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.aqi-value {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-right: 3rem;
+
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: var(--text-primary);
+  background-color: var(--section-bg);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--bg-secondary);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 768px) {
+  .rankings-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .rankings-description {
+    font-size: 0.95rem;
+  }
+
+  .rankings-table {
+    font-size: 0.85rem;
+  }
+
+  .rankings-table th,
+  .rankings-table td {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+
+  .list-aqi-value {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+
+  }
+
+  .status-badge {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .summary-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .summary-card li {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .city-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .aqi-value {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-right: 0;
+  }
+
+  .rankings-summary {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+

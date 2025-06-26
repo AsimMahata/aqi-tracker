@@ -1,0 +1,244 @@
+
+
+
+.about-aqi-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.aqi-header {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--section-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.aqi-subheader {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.6rem;
+  background-color: var(--section-bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+
+
+.aqi-defination,
+.aqi-text,
+.aqi-source {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+}
+
+.aqi-text strong,
+.aqi-defination strong {
+  color: var(--primary-color);
+}
+
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+  margin: 1.5rem 0;
+}
+
+
+.aqi-list,
+.aqi-tips {
+  padding: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.aqi-list li,
+.aqi-tips li {
+  padding: 2px;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+
+.aqi-list li::before {
+  content: "✓";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.aqi-tips li::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  margin-right: 0.5rem;
+}
+
+
+.health-recommendations,
+.protective-measures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.recommendation-card,
+.measure-card {
+  background-color: var(--section-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--card-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommendation-card:hover,
+.measure-card:hover,
+.long-term-solutions:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recommendation-card h3,
+.measure-card h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.recommendation-card ul,
+.measure-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recommendation-card li,
+.measure-card li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.recommendation-card li::before,
+.measure-card li::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+
+.long-term-solutions {
+  background-color: var(--section-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--card-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.solution-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.solution-list li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.solution-list li::before {
+  content: "→";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+
+.aqi-source {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--section-bg);
+  border-radius: 6px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .about-aqi-container {
+    padding: 1rem;
+  }
+
+  .aqi-header {
+    font-size: 2rem;
+  }
+
+  .aqi-subheader {
+    font-size: 1.3rem;
+  }
+
+  .aqi-text,
+  .aqi-defination,
+  .aqi-tips li {
+    font-size: 0.95rem;
+  }
+
+  .health-recommendations,
+  .protective-measures,
+  .solution-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aqi-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+.aqi-list svg,
+.aqi-tips svg {
+  color: #0077b6;
+}

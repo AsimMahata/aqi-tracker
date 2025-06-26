@@ -1,0 +1,11 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 100px;
+      fill:rgb(0, 255, 8);
+    }
+  </style>
+  <text x="50%" y="85%" text-anchor="middle" class="text">AQI</text>
+</svg>

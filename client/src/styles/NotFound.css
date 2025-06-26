@@ -1,0 +1,21 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.not-found p{
+    width: 100vw;    
+    text-align: center;
+    font-size: 25px;
+    margin:25px auto;
+    font-weight: bold;
+    overflow: hidden;
+}
+img{
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+    background: transparent;
+}

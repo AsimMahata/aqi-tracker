@@ -1,0 +1,149 @@
+.history-btn{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+.history-btn a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: font-weight 0.3s, color 0.3s;
+}
+.history-btn a:hover {
+    color: #007bff;
+}
+
+.hazardous {
+  background-color: #7e0023;
+  border: 1px solid #4a0015;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.very-unhealthy {
+  background-color: #99004c;
+  border: 1px solid #660035;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.unhealthy {
+  background-color: #d35400;
+  border: 1px solid #a04100;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.unhealthy-sensitive {
+  background-color: #ffb300;
+  border: 1px solid #b27f00;
+  color: #212121;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.moderate {
+  background-color: #7cb342;
+  border: 1px solid #5a8a2f;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.good {
+  background-color: #2e7d32;
+  border: 1px solid #1b4d20;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.city-name{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+.latitude,.longitude{
+    font-size: 1.2em;
+    margin: 2px;
+    text-align: center;
+}
+.delete-city{
+  text-align: center;
+  margin: 10px;
+  padding: 8px 14px;
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.delete-city:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.delete-city:active {
+  background-color: #a71d2a;
+  transform: translateY(0);
+}
+
+.leaflet-popup-close-button span{
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #333;
+  background:transparent;
+  transition: font-weight 0.3s, color 0.3s;
+}
+.leaflet-popup-close-button span:hover {
+  font-weight: bold;
+  color: #111;
+}
+
+.show-history{
+  text-align: center;
+  margin: 10px;
+  padding: 8px 14px;
+  background-color: #456aff;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.show-history:hover {
+  background-color: #455bff;
+  transform: translateY(-1px);
+}
+
+.show-history:active {
+  background-color:#457bff;
+  transform: translateY(0);
+}
