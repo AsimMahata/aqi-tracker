@@ -14,7 +14,7 @@ function CitySearch({
     const fetchCoordinates = async (newCity) => {
       if (!searchQuery) return;
       try {
-        const url = `https://aqi-tracker-backend-etz8.onrender.com/search?q=${searchQuery}`;
+        const url = `https://aqi-tracker-live-backend.onrender.com/search?q=${searchQuery}`;
         const response = await fetch(url);
         const data = await response.json();
 

@@ -9,7 +9,7 @@ export const fetchAvgAQI = async (weekData) => {
   return await Promise.all(
     weekData.map(async (day) => {
       if (!day || day.aqi != null) return day;
-      const url = `https://aqi-tracker-backend-etz8.onrender.com/avgaqi?id=${day.id}&date=${day.date}`;
+      const url = `https://aqi-tracker-live-backend.onrender.com/avgaqi?id=${day.id}&date=${day.date}`;
       try {
         const res = await axios.get(url);
         const value = parseFloat(res.data).toFixed(2);
@@ -28,7 +28,7 @@ export const fetchPastAQIDB = async (dayData) => {
   return await Promise.all(
     dayData.map(async (time) => {
       if (!time || time.aqi != null) return time;
-      const url = `https://aqi-tracker-backend-etz8.onrender.com/aqi?id=${time.id}&date=${time.date}&hour=${time.hour}`;
+      const url = `https://aqi-tracker-live-backend.onrender.com/aqi?id=${time.id}&date=${time.date}&hour=${time.hour}`;
       try {
         const res = await axios.get(url);
         const aqi = res?.data?.aqi ?? null;
@@ -50,7 +50,7 @@ export const fetchAQIFromDBForCities = async (
   return await Promise.all(
     cityData.map(async (city) => {
       if (!city || city.aqi != null) return city;
-      const url = `https://aqi-tracker-backend-etz8.onrender.com/aqi?id=${city.id}&date=${date}&hour=${hour}`;
+      const url = `https://aqi-tracker-live-backend.onrender.com/aqi?id=${city.id}&date=${date}&hour=${hour}`;
       try {
         const res = await axios.get(url);
         const aqi = res?.data?.aqi ?? null;
@@ -92,7 +92,7 @@ export const updateMissingData = async (dbResults, apiResults) => {
     const newAQI = apiResults[idx]?.aqi;
     if (city.aqi == null && newAQI != null) {
       return axios
-        .post("https://aqi-tracker-backend-etz8.onrender.com/insert", {
+        .post("https://aqi-tracker-live-backend.onrender.com/insert", {
           id: city.id,
           date: currentDate,
           hour: currentHour,
@@ -111,7 +111,7 @@ export const updateMissingData = async (dbResults, apiResults) => {
 // Fetch all city entries from backend
 export const fetchCities = async () => {
   return axios
-    .get("https://aqi-tracker-backend-etz8.onrender.com/cities")
+    .get("https://aqi-tracker-live-backend.onrender.com/cities")
     .catch(() => {
       return { error: "Error retrieving cities" };
     });

@@ -102,7 +102,7 @@ function MapView({ searchQuery, setSearchQuery, setCurrentCity }) {
           localStorage.setItem("cleanup_trigger_date", today);
 
           axios
-            .delete("https://aqi-tracker-backend-etz8.onrender.com/cleanup")
+            .delete("https://aqi-tracker-live-backend.onrender.com/cleanup")
             .then(() => {
               console.log("Cleanup triggered at 12 PM");
             })
