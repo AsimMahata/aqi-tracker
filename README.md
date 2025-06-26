@@ -1,56 +1,59 @@
+
 # 🌍 AQI Tracker
 
 **Real-Time Air Quality Monitoring**
 
-![AQI Tracker](https://img.shields.io/badge/React-18.2.0-blue)
+![React](https://img.shields.io/badge/React-18.2.0-blue)
 ![Leaflet](https://img.shields.io/badge/Leaflet-1.9.4-green)
 ![Vite](https://img.shields.io/badge/Vite-5.0.0-purple)
 
 AQI Tracker is a full-stack web application for monitoring real-time Air Quality Index (AQI) data across cities worldwide.  
-The frontend is built with React and Leaflet, and the backend uses Node.js, Express, and MongoDB.
+The frontend is built with **React**, **Vite**, and **Leaflet**. The backend uses **Node.js**, **Express**, and **MongoDB**.
 
 ---
 
 ## ✨ Features
 
-- Real-time AQI data from the WAQI API
-- Interactive map with color-coded AQI markers
-- City search and automatic geolocation
-- AQI charts and simple tables
-- Light/Dark theme toggle
-- Contact form with EmailJS
-- REST API endpoints for CRUD operations
-- MongoDB for persistent storage
+- 🌍 Real-time AQI data from WAQI API
+- 🗺️ Interactive map with color-coded AQI markers
+- 🔍 City search using OpenStreetMap + geolocation support
+- 📊 Charts and AQI tables for quick insights
+- 🌗 Light/Dark theme toggle
+- 📬 Contact form via EmailJS
+- 🧠 Backend with REST API for CRUD + cleanup logic
+- 🗃️ MongoDB storage with city-level AQI records
 
 ---
 
 ## ⚙️ How It Works
 
-- The frontend fetches real-time AQI data from the WAQI API using coordinates or city names.
-- The backend allows manual data insertions, daily averages, and cleanup via RESTful APIs.
-- City search uses OpenStreetMap Nominatim.
+- Frontend fetches real-time AQI data using WAQI API based on location or city search
+- Backend allows inserting, querying, and cleaning data via RESTful APIs
+- Geolocation uses browser's native API + OpenStreetMap Nominatim for city queries
 
-> Disclaimer: Data comes from the nearest AQI station, which may not reflect precise conditions at your location.
+> **Disclaimer**: AQI is based on the nearest station — actual air quality may differ slightly from your location.
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 📦 Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v16+)
 - npm or yarn
 
-### Clone the Repository
+---
+
+### ▶️ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/aqi-tracker.git
+git clone https://github.com/AsimMahata/aqi-tracker.git
 cd aqi-tracker
 ````
 
 ---
 
-### Setup Client (Frontend)
+### 🖥️ Setup Client (Frontend)
 
 ```bash
 cd client
@@ -58,7 +61,7 @@ npm install
 npm run dev
 ```
 
-Create a `.env` in `client/`:
+Create a `.env` file in `client/`:
 
 ```
 VITE_TOKEN=your_waqi_api_token
@@ -67,11 +70,13 @@ VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
 ```
 
-Runs on: [http://localhost:5173](http://localhost:5173)
+👉 **Get your own WAQI API token here**: [https://aqicn.org/api/](https://aqicn.org/api/)
+
+Frontend runs at: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-### Setup Server (Backend)
+### 🛠️ Setup Server (Backend)
 
 ```bash
 cd server
@@ -79,27 +84,29 @@ npm install
 node server.js
 ```
 
-Create a `.env` in `server/`:
+Create a `.env` file in `server/`:
 
 ```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 ```
 
-Runs on: [http://localhost:5000](http://localhost:5000)
+Backend runs at: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🔗 API Endpoints (Server)
+## 🔗 API Endpoints
 
-* `GET /ping` – Health check
-* `GET /healthz` – Health check
-* `GET /cities` – Get all cities
-* `GET /aqi?id=city_id&date=YYYY-MM-DD&hour=H` – Get AQI for a specific hour
-* `GET /avgaqi?id=city_id&date=YYYY-MM-DD` – Get average AQI for a date
-* `POST /insert` – Insert a new AQI record
-* `DELETE /cleanup` – Delete data older than 8 days
-* `GET /search?q=cityname` – Search cities via OpenStreetMap
+| Method | Route      | Description                       |
+| ------ | ---------- | --------------------------------- |
+| GET    | `/ping`    | Health check                      |
+| GET    | `/healthz` | Another health check              |
+| GET    | `/cities`  | Fetch list of all stored cities   |
+| GET    | `/aqi`     | Get AQI for specific hour         |
+| GET    | `/avgaqi`  | Get average AQI for a given date  |
+| POST   | `/insert`  | Insert a new AQI record           |
+| DELETE | `/cleanup` | Delete AQI data older than 8 days |
+| GET    | `/search`  | Search cities via OSM Nominatim   |
 
 ---
 
@@ -107,11 +114,11 @@ Runs on: [http://localhost:5000](http://localhost:5000)
 
 ```
 aqi-tracker/
-├── client/           # React + Leaflet frontend
+├── client/               # React + Leaflet frontend
 │   ├── public/
 │   └── src/
-│       ├── animations/
-│       ├── assets/
+│       ├── animations/   # Lottie files
+│       ├── assets/       # Icons and images
 │       ├── components/
 │       ├── hooks/
 │       ├── pages/
@@ -122,7 +129,7 @@ aqi-tracker/
 │   ├── .env
 │   └── package.json
 
-├── server/           # Express + MongoDB backend
+├── server/               # Node + Express backend
 │   ├── .env
 │   └── server.js
 
@@ -135,27 +142,30 @@ aqi-tracker/
 
 ## 🧪 Deployment
 
-### Vercel (Frontend)
+### 📦 Frontend on Vercel
 
 * Root Directory: `client`
 * Build Command: `npm run build`
 * Output Directory: `dist`
 
-### Render (Backend)
+### 🌐 Backend on Render
 
 * Root Directory: `server`
 * Start Command: `node server.js`
-* Add `MONGO_URI` in the environment settings
+* Add `MONGO_URI` as an environment variable
 
 ---
 
 ## 🎨 Credits
 
-* WAQI API – for real-time AQI data
-* Leaflet – for interactive maps
-* Chart.js – for AQI visualization
-* Lottie – for animations
-* OpenStreetMap Nominatim – for city search
+* 🌐 [WAQI API](https://aqicn.org/api/) — for real-time AQI data
+* 🗺️ [Leaflet](https://leafletjs.com/) — for map visualizations
+* 📈 [Chart.js](https://www.chartjs.org/) — for AQI graphs
+* 🗂️ [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/) — for city search
+* 🎞️ [Lottie Animations](https://lottiefiles.com/)
+
+  * 🌍 Earth Logo: [Earth Globe Loop](https://lottiefiles.com/free-animation/earth-globe-rotating-with-seamless-loop-animation-SKugdic58u)
+  * 🏭 Loading Animation: [Pollution Factory](https://lottiefiles.com/free-animation/factory-pollution-city-air-and-water-aqy1qPDdBX)
 
 ---
 
@@ -165,7 +175,11 @@ MIT License
 
 ---
 
-**Made with care for a cleaner, healthier world.**
+##  Acknowledgment
 
+Thanks to the WAQI team, open-source contributors, and the developer community
+for making tools like these accessible and powerful.
+
+**Made with care for a cleaner, healthier world.**
 
 
