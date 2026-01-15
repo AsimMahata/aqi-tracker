@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import loadingAnim from "../animations/cat.json";
+import loadingAnim from "../animations/Cat.json";
 
 export function LoadingBackend({ onReady }) {
   const [showAnim, setShowAnim] = useState(false);
