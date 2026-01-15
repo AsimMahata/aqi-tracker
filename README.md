@@ -166,7 +166,7 @@ aqi-tracker/
 
   * 🌍 Earth Logo: [Earth Globe Loop](https://lottiefiles.com/free-animation/earth-globe-rotating-with-seamless-loop-animation-SKugdic58u)
   * 🏭 Loading Animation: [Pollution Factory](https://lottiefiles.com/free-animation/factory-pollution-city-air-and-water-aqy1qPDdBX)
-
+  * 🐈 BackendLoading Animation : [Cat Sleeping ](https://lottiefiles.com/free-animation/cat-sleeping-g7Ph19GRSH) 
 ---
 
 ## 📄 License

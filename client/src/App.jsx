@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { useState } from "react";
+
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { LoadingBackend } from "./components/LoadingBackend";
 import MapView from "./pages/MapView";
 import { AboutAQI } from "./pages/AboutAQI";
 import { Contact } from "./pages/Contact";
@@ -15,6 +16,12 @@ import { History } from "./pages/History";
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentCity, setCurrentCity] = useState(null);
+
+  const [backendReady, setBackendReady] = useState(false);
+
+  if (!backendReady) {
+    return <LoadingBackend onReady={() => setBackendReady(true)} />;
+  }
 
   return (
     <Router>
